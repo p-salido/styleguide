@@ -21,6 +21,11 @@ should not instantiate or invoke a service. The same principle
 applies to name references - a model should not reference constants
 on a service.
 
+Related to flow of logic is flow of data, which should be: user input ->
+data model -> presentation. As much as possible operations should be
+performed on data model objects rather than raw user input or presentation
+output.
+
 Services should be created for operations that involve multiple model
 classes. Methods in a model class should, as much as possible, deal with
 that class alone.
