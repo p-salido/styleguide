@@ -10,11 +10,6 @@ This guide does not attempt to define idiomatic ruby; there are other
 resources that do so. Try to match the style of surrounding code
 and follow accepted Ruby community practices.
 
-Mind how your code appears on Github, in terminals and in editors of
-people who have more than one editor window on their screen.
-Avoid starting important parts of the code beyond the 79th column.
-Post-expression conditionals are a very common example of this.
-
 Most of the guidelines in this document are not absolute requirements. If there
 is a good reason to do something differently, go for it. Context matters.
 
@@ -56,6 +51,13 @@ be overwritten from derived data.
 
 Prefer named constants over magic literals.
 
+## Code
+
+Do not mutate arguments unless that is the purpose of the method.
+
+In a conditional the positive case should go first. Do not use `unless` with
+`else` or `if !(...) ... else`.
+
 ## Data Interchange
 
 Dates exposed through API endpoints should be formatted according to ISO 8601.
@@ -96,9 +98,20 @@ is preventing it from happening.
 
 If in doubt, match the style of surrounding code.
 
+Mind how your code appears on Github, in terminals and in editors of
+people who have more than one editor window on their screen.
+Avoid starting important parts of the code beyond the 79th column.
+Post-expression conditionals are a very common example of this,
+and unless the entire conditional expression ends before the 79th column
+the code should generally be rewritten to use an if statement.
+
 Explicit parentheses are encouraged in method definitions and method calls.
 
 Trailing commas are encouraged in multi-line expressions.
+
+Use two spaces for indentation.
+
+Use Unix-style line endings (LF only).
 
 ## Commits
 
@@ -111,3 +124,18 @@ some documentation that can be helpful.
 
 Favor putting documentation into the code itself as comments
 over putting it into commit messages.
+
+Other style guides:
+
+https://github.com/bbatsov/ruby-style-guide
+https://github.com/bbatsov/rails-style-guide
+https://github.com/github/rubocop-github/blob/master/STYLEGUIDE.md
+https://relishapp.com/womply/ruby-style-guide/docs
+https://shopify.github.io/ruby-style-guide/
+http://www.caliban.org/ruby/rubyguide.shtml
+http://airbnb.io/projects/ruby/
+https://captainvita.gitbooks.io/ruby-style-guide/content/
+
+http://relaxed.ruby.style/
+
+https://idiosyncratic-ruby.com/
